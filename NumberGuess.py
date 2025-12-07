@@ -6,7 +6,7 @@ def clear_screen():
     else:
         os.system('clear')
 
-def show_welcomme_message():
+def show_welcome_message():
     """Displays the game banner and instructions."""
     print("\n")
     print("="*50)
@@ -67,4 +67,5 @@ while True:
     if play_again!="yes":
         print("\nThanks for playing! Goodbye.\n")
         break
+
 
