@@ -30,7 +30,7 @@ def set_difficulty():
 def play_game():
     """Main logic of the game."""
     clear_screen()
-    show_welcomme_message()
+    show_welcome_message()
     secret_number=random.randint(1,100)
     total_attempts=set_difficulty()
     remaining_attempts=total_attempts
@@ -67,5 +67,6 @@ while True:
     if play_again!="yes":
         print("\nThanks for playing! Goodbye.\n")
         break
+
 
 
