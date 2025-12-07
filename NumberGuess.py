@@ -10,7 +10,7 @@ def show_welcomme_message():
     """Displays the game banner and instructions."""
     print("\n")
     print("="*50)
-    print("🎯  NUMBER GUESSING GAME  🎯")
+    print("NUMBER GUESSING GAME")
     print("="*50)
     print("I am thinking of a number between 1 and 100.")
     print("Can you guess What it is")
@@ -26,7 +26,7 @@ def set_difficulty():
         elif level=="hard":
             return 3
         else:
-            print("❌ Invalid choice! Please type 'easy' or 'medium' or 'hard'.")
+            print("Invalid choice! Please type 'easy' or 'medium' or 'hard'.")
 def play_game():
     """Main logic of the game."""
     clear_screen()
@@ -34,7 +34,7 @@ def play_game():
     secret_number=random.randint(1,100)
     total_attempts=set_difficulty()
     remaining_attempts=total_attempts
-    print(f"\n✅ You have {remaining_attempts} attempts to guess the number.")
+    print(f"\nYou have {remaining_attempts} attempts to guess the number.")
 
     guess=0
     while remaining_attempts>0:
@@ -43,27 +43,28 @@ def play_game():
             guess_input=input("Enter your guess: ")
             guess=int(guess_input)
             if guess<secret_number:
-                print("📉 Too Low! Try a higher number.")
+                print("Too Low! Try a higher number.")
             elif guess>secret_number:
-                print("📈 Too High! Try a lower number.")
+                print("Too High! Try a lower number.")
             else:
                 print("\n"+"*"*50)
-                print(f"🎉 CONGRATULATIONS You Guessed {secret_number}!")
+                print(f"CONGRATULATIONS You Guessed {secret_number}!")
                 print(f"You used {total_attempts-remaining_attempts+1} attempts.")
                 print("*"*50+"\n")
                 return
             
             remaining_attempts-=1
         except ValueError:
-            print("⚠️  Invalid input! Please enter a valid number.")
+            print("Invalid input! Please enter a valid number.")
     print("\n"+"x"*50)
-    print(f"💀 GAME OVER! You ran out of attempts.")
+    print(f"GAME OVER! You ran out of attempts.")
     print(f"The secret number was: {secret_number}")
     print("x"*50+"\n")
 
 while True:
     play_game()
-    play_again=input("🔄 Do you want to play again? (yes/no): ").lower()
+    play_again=input("Do you want to play again? (yes/no): ").lower()
     if play_again!="yes":
-        print("\n👋 Thanks for playing! Goodbye.\n")
+        print("\nThanks for playing! Goodbye.\n")
         break
+
